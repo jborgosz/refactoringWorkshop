@@ -32,6 +32,7 @@ public:
 
     void receive(std::unique_ptr<Event> e) override;
 
+
 private:
     struct Segment
     {
@@ -49,6 +50,9 @@ private:
 
     Direction m_currentDirection;
     std::list<Segment> m_segments;
+
+    bool lostCheck(Segment newHead, bool lost, IPort& m_scorePort);
+
 };
 
 } // namespace Snake
